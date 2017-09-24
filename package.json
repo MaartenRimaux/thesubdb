@@ -1,0 +1,9 @@
+{
+  "name": "thesubdb",
+  "version": "1.0.0",
+  "description": "A Node.js library for thesubdb",
+  "main": "index.js",
+  "repository": "https://github.com/MaartenRimaux/thesubdb.git",
+  "author": "Maarten Rimaux <maartenrimaux@gmail.com> (https://github.com/MaartenRimaux/)",
+  "license": "MIT"
+}
