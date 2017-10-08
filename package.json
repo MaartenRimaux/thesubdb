@@ -2,7 +2,7 @@
   "name": "thesubdb",
   "version": "1.0.0",
   "description": "A Node.js library for thesubdb",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/MaartenRimaux/thesubdb.git",
   "author": "Maarten Rimaux <maartenrimaux@gmail.com> (https://github.com/MaartenRimaux/)",
   "license": "MIT",
@@ -19,5 +19,9 @@
     "eslint-plugin-flowtype": "^2.35.1",
     "eslint-plugin-import": "^2.7.0",
     "flow-bin": "^0.55.0"
+  },
+  "dependencies": {
+    "md5": "^2.2.1",
+    "request": "^2.82.0"
   }
 }
