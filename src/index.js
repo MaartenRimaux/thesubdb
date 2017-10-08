@@ -31,7 +31,7 @@ const availLan = (file: string): Promise<string> => new Promise((resolve, reject
         reject(new Error(`Received status code: ${res.statusCode}`));
       }
     })
-    .catch((res: any) => { reject(new Error(`Received status code: ${res.statusCode}`)); });
+    .catch(reject);
 });
 
 const downSub = (lang: string, file: string): Promise<string> => new Promise((resolve, reject) => {
@@ -52,7 +52,7 @@ const downSub = (lang: string, file: string): Promise<string> => new Promise((re
         reject(new Error(`Received status code: ${res.statusCode}`));
       }
     })
-    .catch((res: any) => { reject(new Error(`Received status code: ${res.statusCode}`)); });
+    .catch(reject);
 });
 
 module.exports = {
