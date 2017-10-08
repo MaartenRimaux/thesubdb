@@ -21,7 +21,9 @@
     "flow-bin": "^0.55.0"
   },
   "dependencies": {
+    "fs-extra": "^4.0.2",
     "md5": "^2.2.1",
-    "request": "^2.82.0"
+    "request": "^2.82.0",
+    "request-promise": "^4.2.2"
   }
 }
