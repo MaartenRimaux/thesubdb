@@ -15,7 +15,7 @@ const getHash = (file: string): string => {
   return md5(Buffer.concat([start, end]));
 };
 
-const availLan = (file: string): Promise<string> => new Promise((resolve, reject) => {
+const availLan = (file: string): Promise<Array<string>> => new Promise((resolve, reject) => {
   const hash = getHash(path.resolve(__dirname, file));
   const options = {
     url: `http://api.thesubdb.com/?action=search&hash=${hash}`,
@@ -24,12 +24,8 @@ const availLan = (file: string): Promise<string> => new Promise((resolve, reject
     },
   };
   request(options)
-    .then((res: any) => {
-      if (res.statusCode === 200) {
-        resolve(res.body.split(','));
-      } else {
-        reject(new Error(`Received status code: ${res.statusCode}`));
-      }
+    .then((result: string) => {
+      resolve(result.split(','));
     })
     .catch(reject);
 });
@@ -43,14 +39,10 @@ const downSub = (lang: string, file: string): Promise<string> => new Promise((re
     },
   };
   request(options)
-    .then((res: any) => {
-      if (res.statusCode === 200) {
-        fs.writeFile(`${path.basename(file, path.extname(file))}.srt`, res.body)
-          .then(resolve)
-          .catch(reject);
-      } else {
-        reject(new Error(`Received status code: ${res.statusCode}`));
-      }
+    .then((result: string) => {
+      fs.writeFile(`${path.basename(file, path.extname(file))}.srt`, result)
+        .then(resolve)
+        .catch(reject);
     })
     .catch(reject);
 });
