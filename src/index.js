@@ -40,7 +40,7 @@ const downSub = (lang: string, file: string): Promise<string> => new Promise((re
   };
   request(options)
     .then((result: string) => {
-      fs.writeFile(`${path.basename(file, path.extname(file))}.srt`, result)
+      fs.writeFile(`${path.dirname(file)}${path.basename(file, path.extname(file))}.srt`, result)
         .then(resolve)
         .catch(reject);
     })
