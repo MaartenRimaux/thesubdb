@@ -1,10 +1,11 @@
 {
   "name": "thesubdb",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Node.js library for thesubdb",
   "main": "lib/index.js",
   "repository": "https://github.com/MaartenRimaux/thesubdb.git",
-  "author": "Maarten Rimaux <maartenrimaux@gmail.com> (https://github.com/MaartenRimaux/)",
+  "author":
+    "Maarten Rimaux <maartenrimaux@gmail.com> (https://github.com/MaartenRimaux/)",
   "license": "MIT",
   "scripts": {
     "build": "babel src -d lib"
